@@ -14,6 +14,8 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=64, unique=True)
     category = models.ForeignKey(IngredientCategory, on_delete=models.DO_NOTHING, null=True)
     def __str__(self):
+        if not self.category:
+            return str()
         return f'{IngredientCategory.objects.get(pk=self.category.pk).name} - {self.name}'
 
 class Meal(models.Model):
