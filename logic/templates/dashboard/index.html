@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>FoodPicker</title>
-        <link rel="stylesheet" href="../static/css/style.css">
-    </head>
-    <body class="body">
-        <div>
-        {% for ingredient in ingredients %}
-            <p>{{ ingredient.name }}, {{ ingredient.category }}</p>
-        {% endfor %}
+
+<head>
+    <title>FoodPicker</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body class="body">
+    <div class="content">
+        <div class="interactable">
+            <h2 class="title">Known Ingredients</h2>
         </div>
+        <div class="card-container">
+            {% for ingredient in ingredients %}
+            <div class="item-card">
+                <h2>{{ ingredient.name }}</h2>
+                <p>{{ ingredient.category }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {# a comment #}
+</body>
 
-        <h1>My Webpage</h1>
-        {{ a_variable }}
-
-        {# a comment #}
-    </body>
 </html>
