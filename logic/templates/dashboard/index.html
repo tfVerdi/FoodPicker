@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FoodPicker</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body class="body">
+        <div>
+        {% for ingredient in ingredients %}
+            <p>{{ ingredient.name }}, {{ ingredient.category }}</p>
+        {% endfor %}
+        </div>
+
+        <h1>My Webpage</h1>
+        {{ a_variable }}
+
+        {# a comment #}
+    </body>
+</html>
