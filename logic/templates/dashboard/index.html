@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static%}
 <head>
     <title>FoodPicker</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/dropdown.js' %}" defer></script>
 </head>
 
 <body class="body">
     <div class="content">
         <div class="interactable">
-            <h2 class="title">Known Ingredients</h2>
+            <h2 class="title">Known Meals</h2>
         </div>
         <div class="card-container">
-            {% for ingredient in ingredients %}
+            {% for meal in meals %}
             <div class="item-card">
-                <h2>{{ ingredient.name }}</h2>
-                <p>{{ ingredient.category }}</p>
+                <h2>{{ meal.name }}</h2>
+                <p>{{ meal.category }}</p>
+                <button onclick="myFunction()" class="dropdown">
+                    V
+                    <div class="dropdown-content">MASTER HAS FREED ME</div>
+                </button>
             </div>
             {% endfor %}
         </div>
     </div>
-    {# a comment #}
 </body>
 
 </html>

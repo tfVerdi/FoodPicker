@@ -6,5 +6,5 @@ def dashboard(response):
     return render(
         response,
         "dashboard/index.html",
-        {"ingredients": Ingredient.objects.all}
+        {"meals": Meal.objects.all}
     )
